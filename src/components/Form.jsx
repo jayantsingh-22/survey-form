@@ -6,7 +6,7 @@ import useForm from "../hooks/useForm";
 import useValidation from "../hooks/useValidation";
 import axios from "axios";
 
-const REACT_APP_API_URL = process.env.REACT_APP_API_URL;
+// const REACT_APP_API_URL = process.env.REACT_APP_API_URL;
 
 const Form = ({ onSubmit }) => {
   const initialState = {
@@ -31,7 +31,7 @@ const Form = ({ onSubmit }) => {
   useEffect(() => {
     if (formData.surveyTopic) {
       axios
-        .get(`${REACT_APP_API_URL}/api/${formData.surveyTopic}`)
+        .get(`/api/${formData.surveyTopic}`)
         .then((response) => setAdditionalQuestions(response.data))
         .catch((error) => console.error(error));
     }
